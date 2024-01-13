@@ -1,0 +1,21 @@
+#
+# ~dotzaki
+#
+
+[core]
+    excludesfile = ~/.config/git/ignore
+[apply]
+    whitespace = nowarn
+[push]
+    default = simple
+[pull]
+    rebase = true
+[fetch]
+    prune = true
+[color]
+    branch = auto
+    diff = auto
+    interactive = auto
+    status = auto
+[diff]
+    colorMoved = zebra
