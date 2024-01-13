@@ -17,6 +17,7 @@ if status is-interactive
     set -gx PAGER bat
     set -gx EDITOR nvim
     set -gx VISUAL nvim
+
     set -gx URI_FONT "Iosevka Nerd Font" "Geist Mono"
     set -gx URI_COLORS "Catppuccin Latte (Mauve)"
     set -gx GITHUB_USERNAME dotzaki
