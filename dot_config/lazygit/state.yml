@@ -1,0 +1,10 @@
+lastupdatecheck: 0
+recentrepos:
+- /Users/rigel/.local/share/chezmoi
+- /Users/rigel/dotfiles
+- /Users/rigel/.config/lazygit/lazygit
+- /Users/rigel/otherfiles/proj/web/dlog
+startuppopupversion: 5
+customcommandshistory: []
+hidecommandlog: false
+ignorewhitespaceindiffview: false
