@@ -7,8 +7,8 @@ if wezterm.config_builder then
 end
 
 -- Config starts here
--- config.font = wezterm.font("Geist Mono")
-config.font = wezterm.font("Iosevka Nerd Font")
+config.font = wezterm.font("Geist Mono")
+-- config.font = wezterm.font("Iosevka Nerd Font")
 config.font_size = 18
 
 config.initial_cols = 105
