@@ -1,0 +1,18 @@
+color = true
+mode = "symlink"
+progress = true
+verbose = true
+
+[editor]
+apply = true
+watch = true
+
+[git]
+# This is to auto add changes to source state after any change
+# autoAdd = true
+
+# Commit changes to source after any change?
+# autoCommit = true
+
+# Push changes to source after any change?
+# autoPush = true
