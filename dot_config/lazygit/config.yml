@@ -27,4 +27,4 @@ gui:
 git:
   parseEmoji: true
 quitOnTopLevelReturn: true
-promptToReturnFromSubprocess: false
+promptToReturnFromSubprocess: true
