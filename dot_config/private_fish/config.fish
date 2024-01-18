@@ -34,7 +34,8 @@ if status is-interactive
     abbr ll 'eza --icons=always --hyperlink --group-directories-first --all --long'
     abbr lt 'eza --icons=always --hyperlink --group-directories-first --tree --all'
     abbr c chezmoi
-    abbr ef '$EDITOR $XDG_CONFIG_HOME/fish'
+    abbr com comtrya
+    abbr ef '$EDITOR $XDG_CONFIG_HOME/fish/config.fish'
     abbr sof 'source $XDG_CONFIG_HOME/fish/config.fish'
 
     abbr pd prevd
