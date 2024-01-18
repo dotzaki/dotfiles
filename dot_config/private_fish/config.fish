@@ -25,7 +25,7 @@ if status is-interactive
     set -gx WEZTERM_CONFIG_FILE $XDG_CONFIG_HOME/wezterm/wezterm.lua
 
     # shortcuts <:
-    abbr fuck 'sudo (fc -ln -1)'
+    abbr fuck 'sudo (history | head -n 1)'
     abbr n nvim
     abbr lg lazygit
     abbr gid 'git config user.name ; git config user.email'
