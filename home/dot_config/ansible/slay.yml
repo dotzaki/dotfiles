@@ -1,7 +1,7 @@
 ---
 - name: Machine setup
   hosts: localhost
-  become: true
+  become: false
   connection: localhost
   gather_facts: true
 
