@@ -22,7 +22,9 @@ This expects a public `dotfiles` repo to exist in `$GITHUB_USERNAME`'s account
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply $GITHUB_USERNAME
 ```
 
-`sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply dotzaki`
+```
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply dotzaki
+```
 
 ## Fonts
 
