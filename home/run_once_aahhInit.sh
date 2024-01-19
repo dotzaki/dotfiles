@@ -19,6 +19,6 @@ else
 	brew install ansible
 fi
 
-ansible-playbook ./slay.yml --ask-become-pass
+ansible-playbook slay.yml --ask-become-pass
 
 echo "Ansible install completed"
