@@ -12,3 +12,9 @@ Note: `./home` is the source directory for chezmoi
 export $GITHUB_USERNAME=
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply $GITHUB_USERNAME
 ```
+
+## Fonts
+
+Manually install fonts, haven't figured out how to do it in ansible without community mods.
+Should be easy through macos fontbook.
+
