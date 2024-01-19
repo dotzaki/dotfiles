@@ -8,10 +8,15 @@ Note: `./home` is the source directory for chezmoi
 
 ## Run
 
+### Public repo
+
+This expects a public `dotfiles` repo to exist in `$GITHUB_USERNAME`'s account
+
 ```shell
-export $GITHUB_USERNAME=
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply $GITHUB_USERNAME
 ```
+
+`sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply dotzaki`
 
 ## Fonts
 
