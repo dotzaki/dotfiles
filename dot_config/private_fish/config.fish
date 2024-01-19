@@ -26,6 +26,8 @@ if status is-interactive
 
     # shortcuts <:
     abbr fuck 'sudo (history | head -n 1)'
+
+
     abbr n nvim
     abbr lg lazygit
     abbr gid 'git config user.name ; git config user.email'
