@@ -1,0 +1,60 @@
+---
+- name: Machine setup
+  hosts: localhost
+  become: true
+  connection: localhost
+  gather_facts: true
+
+  tasks:
+    - name: Get my user
+      ansible.builtin.set_fact:
+        remote_regular_user: "{{ ansible_facts.user_id}}"
+
+    - name: Install fish
+      ansible.builtin.package:
+        name: fish
+        state: present
+      notify: restart fish
+
+    - name: Change shell to fish
+      ansible.builtin.shell: chsh -s /opt/homebrew/bin/fish
+      bceome_user: "{{ remote_regular_user }}"
+
+    - name: Intall rest of packages
+      ansible.builtin.package:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - firefox
+        - zotero
+        - todoist
+        - obsidian
+        - karabiner-elements
+        - syncthing
+        - bitwarden
+        - anki
+        # cli
+        - wezterm
+        - neovim
+        - git
+        - ripgrep
+        - lazygit
+        - rm-improved
+        - eza
+        - go
+      notify: restart wezterm
+
+    - name: Install rust
+      ansible.builtin.shell: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+      become_user: "{{ remote_regular_user }}"
+
+  handlers:
+    - name: restart fish
+      ansible.builtin.service:
+        name: fish
+        state: restarted
+
+    - name: restart wezterm
+      ansible.builtin.service:
+        name: wezterm
+        state: restarted
