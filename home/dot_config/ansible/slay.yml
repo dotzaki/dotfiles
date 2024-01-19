@@ -31,10 +31,6 @@
       ansible.builtin.set_fact:
         remote_regular_user: "{{ ansible_facts.user_id}}"
 
-    - name: Gather package facts
-      ansible.builtin.package_facts:
-        manager: auto
-
     - name: Install fish
       ansible.builtin.package:
         name: fish
@@ -44,12 +40,16 @@
       ansible.builtin.command: chsh -s {{ fish_path }}
       become_user: "{{ remote_regular_user }}"
 
+    - name: Gather package facts
+      ansible.builtin.command: brew list --versions
+      register: brew_facts
+
     - name: Intall rest of packages
       ansible.builtin.package:
         name: "{{ item }}"
         state: latest
       loop: "{{ packages }}"
-      when: "item not in ansible_facts.packages"
+      when: "item not in brew_facts"
 
     - name: Install rust
       ansible.builtin.shell: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
