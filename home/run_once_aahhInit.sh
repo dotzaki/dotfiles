@@ -3,7 +3,7 @@
 set -e
 
 # Check if brew is installed
-if [[ -x $(command -v brew)]]; then
+if [[ -x $(command -v brew) ]]; then
 	echo "Homebrew is already installed."
 else
 	echo "Installing Homebrew..."
