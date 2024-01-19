@@ -4,7 +4,11 @@ Uses chezmoi to bootstrap my dotfiles
 
 Most of it is ripped from [logandonley/dotfiles](https://github.com/logandonley/dotfiles).
 
-Note: `./home` is the source directory for chezmoi
+Note:
+
+- `./home` is the source directory for chezmoi
+- You will need to enter your password throughout instead of at the beginning, as homebrew will complain if it is ran as root.
+- Tasks might fail if they are already installed and
 
 ## Run
 
