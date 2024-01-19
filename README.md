@@ -8,6 +8,8 @@ Note: `./home` is the source directory for chezmoi
 
 ## Run
 
+Run the one-liner in `$HOME` as it creates `./bin/chezmoi`
+
 ### Public repo
 
 This expects a public `dotfiles` repo to exist in `$GITHUB_USERNAME`'s account
