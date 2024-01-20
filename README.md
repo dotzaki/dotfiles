@@ -46,3 +46,9 @@ There is this weird in-between though from when I add `mode = "symlink"` in the 
 This eventually ends though after some time and the files are actually symlinked and fish starts to complain that it can't find the config files.
 
 The behaviour seems so random so I can't really be bothered to try and use it.
+
+## TODO
+
+- [ ] Add pnpm install  `curl -fsSL https://get.pnpm.io/install.sh | sh -`
+- [ ] Add `fd` to brew packages install, needed for nvim setup.
+- [ ] Setup macOS specific options so I don't have to manually do them.
