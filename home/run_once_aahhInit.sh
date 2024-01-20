@@ -20,6 +20,7 @@ fi
 
 # Add the homebrew install to the $PATH
 eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(/opt/homebrew/bin/ shellenv)"
 
 # Check if ansible is installed
 if brew list ansible &>/dev/null; then
