@@ -14,19 +14,19 @@ if status is-interactive
         test -d $xdgdir; or mkdir -p $xdgdir
     end
 
+    fish_add_path ~/bin/
+
     set -gx PAGER bat
     set -gx EDITOR nvim
     set -gx VISUAL nvim
 
     set -gx URI_FONT "Iosevka Nerd Font" "Geist Mono"
     set -gx URI_COLORS "Catppuccin Latte (Mauve)"
-    set -gx GITHUB_USERNAME dotzaki
 
     set -gx WEZTERM_CONFIG_FILE $XDG_CONFIG_HOME/wezterm/wezterm.lua
 
     # shortcuts <:
     abbr fuck 'sudo (history | head -n 1)'
-
 
     abbr n nvim
     abbr lg lazygit
@@ -42,8 +42,6 @@ if status is-interactive
 
     abbr pd prevd
     abbr nd nextd
-
-    abbr nukeNvim 'rip ~/.local/s**/nvim ; rip ~/.cache/nvim'
 
     # Set initial working directory.
     set -g IWD $PWD
