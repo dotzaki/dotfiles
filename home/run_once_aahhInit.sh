@@ -30,6 +30,8 @@ else
 	brew install ansible
 fi
 
+ansible-galaxy collection install community.general
+
 ansible-playbook ~/.config/ansible/slay.yml -vv --ask-become-pass
 
 echo "Ansible install completed"
