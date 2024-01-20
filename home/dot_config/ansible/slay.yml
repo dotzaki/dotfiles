@@ -55,5 +55,5 @@
       loop: "{{ brew_casks }}"
 
     - name: Install rust
-      ansible.builtin.shell: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -- -y
+      ansible.builtin.shell: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
       become_user: "{{ remote_regular_user }}"
