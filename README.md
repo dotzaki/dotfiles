@@ -20,6 +20,8 @@ Run the one-liner in `$HOME` as it creates `./bin/chezmoi`
 
 This expects a public `dotfiles` repo to exist in `$GITHUB_USERNAME`'s account
 
+When running on mac, if git isn't installed, just run the one-liner and a system popup will ask for permission to install xcode tools. You will have to run the one-liner twice though. Or just install git.
+
 ```shell
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply $GITHUB_USERNAME
 ```

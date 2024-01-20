@@ -2,14 +2,6 @@
 
 set -e
 
-# For macOS check if xcode tools is installed.
-if xcode-select -p 1>/dev/null; then
-	echo "Xcode command line tools are already installed."
-else
-	echo "Installing xcode command line tools..."
-	xcode-select --install
-fi
-
 # Check if brew is installed
 if [[ -x $(command -v brew) ]]; then
 	echo "Homebrew is already installed."
