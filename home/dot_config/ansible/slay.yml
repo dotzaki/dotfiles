@@ -6,24 +6,23 @@
   gather_facts: true
 
   vars:
-    packages:
+    brew_casks:
       - firefox
-      - zotero
       - todoist
       - obsidian
       - karabiner-elements
-      - syncthing
       - bitwarden
       - anki
-      # cli
       - wezterm
+    brew_packages:
+      - syncthing
       - neovim
-      - git
       - ripgrep
       - lazygit
       - rm-improved
       - eza
       - go
+      - bat
     fish_path: /opt/homebrew/bin/fish
 
   tasks:
@@ -31,25 +30,43 @@
       ansible.builtin.set_fact:
         remote_regular_user: "{{ ansible_facts.user_id}}"
 
+    - name: Install community.general collection
+      ansible.builtin.ansible_galaxy:
+        type: collection
+        name: community.general
+        state: present
+
+    - name: Gather package facts
+      community.general.homebrew:
+        update_homebrew: yes
+        list: yes
+      register: brew_facts
+
     - name: Install fish
       ansible.builtin.package:
         name: fish
         state: present
 
+    - name: Add fish to /etc/shells
+      ansible.builtin.shell: echo /opt/homebrew/bin/fish | sudo tee -a /etc/shells
+
     - name: Change shell to fish
       ansible.builtin.command: chsh -s {{ fish_path }}
       become_user: "{{ remote_regular_user }}"
 
-    - name: Gather package facts
-      ansible.builtin.command: brew list --versions
-      register: brew_facts
-
-    - name: Intall rest of packages
-      ansible.builtin.package:
+    - name: Intall packages
+      community.general.homebrew:
         name: "{{ item }}"
         state: latest
       loop: "{{ packages }}"
-      when: "item not in brew_facts"
+      when: "item not in brew_facts.packages"
+
+    - name: Install casks
+      community.general.homebrew_casks:
+        name: "{{ item }}"
+        state: latest
+      loop: "{{ casks }}"
+      when: "item not in brew_facts.packages"
 
     - name: Install rust
       ansible.builtin.shell: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
