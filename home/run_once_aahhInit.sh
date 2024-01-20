@@ -18,6 +18,9 @@ else
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
+# Add the homebrew install to the $PATH
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Check if ansible is installed
 if brew list ansible &>/dev/null; then
 	echo "Ansible is already installed."
