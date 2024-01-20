@@ -9,6 +9,8 @@ Note:
 - `./home` is the source directory for chezmoi
 - You will need to enter your password throughout instead of at the beginning, as homebrew will complain if it is ran as root.
 - Tasks might fail if they are already installed and are the latest version, there are checks but just read the fail message to see.
+- If you are getting permission issues in the terminal, see if setting the terminal emulator with full disk access helps.
+- Make sure to set the git `user.name` and `user.email`.
 
 ## Run
 
