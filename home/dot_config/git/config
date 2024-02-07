@@ -19,3 +19,6 @@
     status = auto
 [diff]
     colorMoved = zebra
+[user]
+	name = dotzaki
+	email = dev@dotzaki.me

@@ -60,5 +60,16 @@ if status is-interactive
     set -U pure_show_jobs true
     set -U pure_show_system_time true
 
+    # Needed for the coal cd stuff :>
+    # TODO: Delete this when we actually implement the proper stuff in coal :> 
+    source ~/other/projects/coal/parent_cd.fish
+
     eval "$(/opt/homebrew/bin/brew shellenv)"
 end
+
+# pnpm
+set -gx PNPM_HOME "/Users/rigel/.local/share/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end
