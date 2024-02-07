@@ -24,7 +24,7 @@ config.enable_tab_bar = true -- Disable tab bar here if too annoying.
 config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 config.tab_bar_at_bottom = true
-config.tab_and_split_indices_are_zero_based = true
+config.tab_and_split_indices_are_zero_based = false
 
 config.audible_bell = "Disabled"
 config.cursor_blink_rate = 0
