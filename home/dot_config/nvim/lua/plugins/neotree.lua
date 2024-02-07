@@ -13,5 +13,8 @@ return {
       position = "float",
       auto_expand_width = true,
     },
+    filesystem = {
+      bind_to_cwd = true,
+    },
   },
 }
