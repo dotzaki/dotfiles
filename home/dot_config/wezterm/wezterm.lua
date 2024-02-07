@@ -66,6 +66,7 @@ config.scroll_to_bottom_on_input = true
 config.scrollback_lines = 2000
 
 config.show_update_window = false
+config.check_for_updates = false
 
 config.window_padding = {
 	left = 0,
