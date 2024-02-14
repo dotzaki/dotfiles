@@ -4,6 +4,7 @@ if status is-interactive
     set -gx fish_greeting
     # set -g fish_key_bindings fish_vi_key_bindings
     set -g fish_key_bindings fish_default_key_bindings
+    set -gx GPG_TTY (tty)
 
     # Set XDG basedirs.
     # https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html

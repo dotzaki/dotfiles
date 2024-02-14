@@ -22,3 +22,10 @@
 [user]
 	name = dotzaki
 	email = dev@dotzaki.me
+	signingkey = dev@dotzaki.me
+[commit]
+  gpgsign = true
+[tag]
+  gpgSign = true
+[log]
+  showSignature = true
